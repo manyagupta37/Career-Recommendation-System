@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommendation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <style>
+      .mynav{
+          border-radius:10px;
+          box-shadow:0px 20px 60px rgba(0,0,0,0.1);
+          background:rgba(0,0,0,0.7);
+          color:white;
+          padding:10px;
+          width:100%;
+      }
+
+      .container{
+             margin-top:50px;
+             border-radius:15px;
+             box-shadow:0 4px 20px rgba(0,0,0,0.1);
+             padding:30px;
+             background-color:rgba(255,255,255,0.7);
+             text-align:center;
+      }
+
+      .bg-image{
+             background-size:cover;
+
+             height:100vh;
+             transition:background-image 2s ease-in-out;
+             position:relative;
+      }
+   </style>
+
+</head>
+<body>
+
+<div class="bg-image" id="bgImage">
+    <div class="mynav shadow-sm" style="background:transparent; color:black; text:bold; padding:10px; width:100%;">
+    <h1 class="text-center">Career Recommendation System</h1>
+    </div>
+
+    <div class="container mt-5">
+        <h1>Hey Folk, Welcome to the best Career Recommendation System</h1>
+        <p>I aim to assist college/university students in selecting the best career option that suits you!!</p>
+        <p>Click on the button below to get recommendations--></p>
+        <a href="/recommend" class="btn btn-primary">Click Me</a>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    const images = ["static/image1.jpg", "static/image2.png", "static/image3.png"];
+    let currentIndex = 0;
+    function changeBackground(){
+    document.getElementById('bgImage').style.backgroundImage = `url('${images[currentIndex]}')`;
+    currentIndex=(currentIndex+1) % images.length;
+    setTimeout(changeBackground,4000);
+   }
+    changeBackground();
+</script>
+</body>
+</html>
