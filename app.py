@@ -1,4 +1,3 @@
-import time
 
 from flask import Flask, render_template, request, jsonify
 import pickle
@@ -50,15 +49,7 @@ def home():
 def recommend():
     return render_template('recommend.html')
 
-def predict(gender, UG_course, UG_specialization, interests, skills, UG_Percentage, certificate_course_title):
-    global model, scaler
-    
-    time.sleep(2) 
-    return [
-        ("Computer Software Engineer", 0.65),
-        ("Web Developer", 0.17),
-        ("Business Analyst", 0.16)
-    ]
+
 
 @app.route('/pred', methods=['POST', 'GET'])
 def pred():
