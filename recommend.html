@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Recommendation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: #f8f9fa;
+        }
+
+        .container{
+               margin-top:50px;
+               border-radius:15px;
+               box-shadow:0 4px 6px rgba(0,0,0,0.1);
+               padding:30px;
+               background-color: #fff;
+         }
+
+         .form-group label{
+                font-weight:bold;
+          }
+    </style>
+    <script>
+        function calculateUGPercentage() {
+            var ugPercentage = parseFloat(document.getElementById("UG_Percentage").value);
+            document.getElementById("UG_Percentage").value = ugPercentage.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+ <div class="mynav shadow-sm" style="background:black; color:white; font-weight:bold; padding:10px; width:100%;">
+    <h1 class="text-center">Career Recommendation System</h1>
+</div>
+<div class="container">
+    <h2 class="text-center">Fill your details here --></h2>
+    <form method="post" action="/pred">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="UG_course">UG Course:</label>
+                    <input type="text" class="form-control" id="UG_course" name="UG_course">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="UG_specialization">UG Specialization:</label>
+                    <input type="text" class="form-control" id="UG_specialization" name="UG_specialization">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="interests">Interests:</label>
+                    <input type="text" class="form-control" id="interests" name="interests">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="skills">Skills:</label>
+                    <input type="text" class="form-control" id="skills" name="skills">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="UG_Percentage">UG Percentage:</label>
+                    <input type="number" step="0.01" class="form-control" id="UG_Percentage" name="UG_Percentage" onchange="calculateUGPercentage()">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="certificate_course_title">Certificate Course Title:</label>
+                    <input type="text" class="form-control" id="certificate_course_title" name="certificate_course_title">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
